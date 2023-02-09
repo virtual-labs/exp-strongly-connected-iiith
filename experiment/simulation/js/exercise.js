@@ -1,6 +1,7 @@
 'use strict';
 import { graph, makeGraph, numNodes } from "./randomGraph.js";
 import { addEdges, addNodes,cy, removeEdges, removeNodes, } from "./displayGraph.js";
+import { restoreColor } from "./common.js";
 
 window.newGraph = newGraph;
 window.refreshWorkingArea = refreshWorkingArea;
@@ -11,10 +12,6 @@ const EMPTY = "";
 export let componentsList = [];
 let colors = ["green", "violet", "orange", "blue", "yellow", "brown", "black", "grey"]
 let nodeNumber = [];
-
-function restoreColor(nodeColor) {
-    cy.nodes().style('background-color', nodeColor);
-}
 
 function dfs(node, visited, stack) {
     visited[node] = true;
@@ -37,10 +34,6 @@ function dfs2(node, visited, component, reverseGraph, stack) {
 }
 
 function submitSimulation() {
-    // for each component in componentsList
-    // check if those nodes have same number
-    // if not, return false
-    // else return true
     let flag = true;
     for (let i = 0; i < componentsList.length; i++) {
         let num = nodeNumber[componentsList[i][0]];

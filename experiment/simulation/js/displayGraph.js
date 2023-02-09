@@ -24,7 +24,6 @@ export let cy = cytoscape({
     ]
 });
 export function addEdges() {
-    console.log(graph);
     for (let i = 0; i < graph.length; i++) {
         for (let j = 0; j < graph[i].length; j++) {
             cy.add({

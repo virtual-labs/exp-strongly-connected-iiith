@@ -8,25 +8,11 @@
             4
         ],
         "edges": [
-            [
-                1
-            ],
-            [
-                0
-            ],
-            [
-                0,
-                1,
-                3
-            ],
-            [
-                1,
-                2,
-                4
-            ],
-            [
-                2
-            ]
+            [ 1,2 ],
+            [ 0,2,3 ],
+            [ 3,4 ],
+            [ 2 ],
+            [ 3 ]
         ]
     },
     "numStates": 36,
@@ -63,7 +49,13 @@
         "graphState": 1,
         "node": 2,
         "observation": "Node 2 is already visited",
-        "stack": []
+        "stack": [],
+        "isQues": "True",
+        "ques": "The next node to be visited is:",
+        "optiona": "1",
+        "optionb": "4",
+        "optionc": "2",
+        "ans": "c"
     },
     "5": {
         "component": [],
@@ -168,7 +160,13 @@
         "graphState": 2,
         "node": -1,
         "observation": "Reverse graph is created, now we will call DFS2 on nodes in stack",
-        "stack": [3,4,2,1,0]
+        "stack": [3,4,2,1,0],
+        "isQues": "True",
+        "ques" : "What will happen next?",
+        "optiona": "The next node to be visited is 0",
+        "optionb": "DFS 1 is over and a reverse graph is created",
+        "optionc": "The next node to be visited is 1",
+        "ans": "b"
     },
     "20": {
         "component": [],
@@ -266,7 +264,13 @@
         "graphState": 2,
         "node": 2,
         "observation": "DFS2 on node 2 is complete and component is pushed to componentsList. The nodes in the component are colored with same color. The component is/are 2 3 4 .",
-        "stack": [3,4]
+        "stack": [3,4],
+        "isQues": "True",
+        "ques": "Which component is/are pushed to componentsList?",
+        "optiona": "0 1",
+        "optionb": "2 3 4",
+        "optionc": "0 1 2 3 4",
+        "ans": "b"
     },
     "34": {
         "component": [[0,1], [2,3,4]],

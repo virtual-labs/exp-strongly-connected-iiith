@@ -127,7 +127,13 @@
         "node":0,
         "observation": "DFS2 on node 0 is started, the node is popped from stack",
         "component": [],
-        "stack": [4,3,2,1]
+        "stack": [4,3,2,1],
+        "isQues": "True",
+        "ques": "Which node will be popped from stack next?",
+        "optiona": "2",
+        "optionb": "0",
+        "optionc": "4",
+        "ans": "b"
     },
     "17":{
         "graphState":2,
@@ -141,7 +147,7 @@
         "node":1,
         "observation": "DFS on node 1 is started",
         "component": [],
-        "stack": []
+        "stack": [4,3,2,1]
     },
     "19":{
         "graphState":2,
@@ -155,7 +161,13 @@
         "node":0,
         "observation": "DFS2 on node 0 is complete and component is pushed to componentsList. The nodes in the component are colored with same color. The component is/are 0 2 1 .",
         "component": [[0,2,1]],
-        "stack": [4,3,2,1]
+        "stack": [4,3,2,1],
+        "isQues": "True",
+        "ques": "Which component is/are pushed to componentsList?",
+        "optiona": "0 2 1",
+        "optionb": "0 1",
+        "optionc": "0 2",
+        "ans": "a"
     },
     "21":{
         "graphState":2,

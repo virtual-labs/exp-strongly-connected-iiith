@@ -44,14 +44,26 @@
         "graphState": 1,
         "node": 5,
         "observation": "DFS on node 5 is started",
-        "stack": []
+        "stack": [],
+        "isQues": "True",
+        "ques": "Which node will be visited next?",
+        "optiona": "Node 4",
+        "optionb": "Node 5",
+        "optionc": "Node 1",
+        "ans": "b"
     },
     "4": {
         "component": [],
         "graphState": 1,
         "node": 1,
         "observation": "Node 1 is already visited",
-        "stack": []
+        "stack": [],
+        "isQues": "True",
+        "ques": "Predict the first 2 nodes that will be pushed to stack",
+        "optiona": "Node 1, Node 2",
+        "optionb": "Node 1, Node 4",
+        "optionc": "Node 2, Node 5",
+        "ans": "c"
     },
     "5": {
         "component": [],
@@ -184,7 +196,13 @@
         "graphState": 2,
         "node": -1,
         "observation": "Reverse graph is created, now we will call DFS2 on nodes in stack",
-        "stack": [2,5,1,4,0,3]
+        "stack": [2,5,1,4,0,3],
+        "isQues": "True",
+        "ques" : "What will happen next?",
+        "optiona": "The next node to be visited is 0",
+        "optionb": "DFS 1 is over and a reverse graph is created",
+        "optionc": "The next node to be visited is 1",
+        "ans": "b"
     },
     "24": {
         "component": [],
@@ -226,7 +244,13 @@
         "graphState": 2,
         "node": 0,
         "observation": "DFS2 on node 0 is complete and component is pushed to componentsList. The nodes in the component are colored with same color. The component is/are 0 4 .",
-        "stack": [2,5,1,4]
+        "stack": [2,5,1,4],
+        "isQues": "True",
+        "ques": "Which component is/are pushed to componentsList?",
+        "optiona": "0 4",
+        "optionb": "3",
+        "optionc": "1 2 5",
+        "ans": "a"
     },
     "30": {
         "component": [[3],[0,4]],
@@ -296,7 +320,13 @@
         "graphState": 2,
         "node": 5,
         "observation": "Node 5 is already visited, the node is popped from stack",
-        "stack": [2]
+        "stack": [2],
+        "isQues": "True",
+        "ques":"What will happen next?",
+        "optiona": "DFS 2 is over and a reverse graph is created",
+        "optionb": "Node 5 will be removed from stack",
+        "optionc": "The next node to be visited is 2",
+        "ans": "b"
     },
     "40": {
         "component": [[3], [0,4], [1,5]],

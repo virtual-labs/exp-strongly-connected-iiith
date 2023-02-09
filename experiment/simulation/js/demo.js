@@ -1,6 +1,7 @@
 'use strict';
 import { graph, makeGraph, states, numNodes } from "./randomGraph.js";
 import { addNodes, addEdges, cy, removeEdges, addReverseEdges, removeNodes } from "./displayGraph.js";
+import {appendStack,removeStack, changeColor, restoreColor, colorComponents, disableInput} from "./common.js";
 
 window.nextSimulation = nextSimulation;
 window.previousSimulation = previousSimulation;
@@ -10,47 +11,12 @@ window.refreshWorkingArea = refreshWorkingArea;
 const observ = document.getElementById("observations");
 const EMPTY = "";
 
-export let componentsList = [];
+let componentsList = [];
 let numStates = 0;
 let pointer = 0;
 let decide = true;
 let currentStackSize = 0;
 let currentGraphState = 1;
-
-function appendStack(node) {
-    let svgns = "http://www.w3.org/2000/svg";
-    let rect = document.createElementNS(svgns, 'rect');
-    rect.setAttribute('x', currentStackSize * 60 + 10);
-    rect.setAttribute('y', 110);
-    rect.setAttribute('height', '80');
-    rect.setAttribute('width', '50');
-    rect.setAttribute('fill', 'blue');
-    let text = document.createElementNS(svgns, 'text');
-    text.setAttribute('x', currentStackSize * 60 + 30);
-    text.setAttribute('y', 150);
-    text.setAttribute('fill', 'white');
-    text.setAttribute('text-anchor', 'middle');
-    text.setAttribute('dominant-baseline', 'middle');
-    text.textContent = node;
-    document.getElementById('stack').appendChild(rect);
-    document.getElementById('stack').appendChild(text);
-    currentStackSize++;
-}
-
-function removeStack() {
-    let stack = document.getElementById('stack');
-    stack.removeChild(stack.lastChild);
-    stack.removeChild(stack.lastChild);
-    currentStackSize--;
-}
-
-function changeColor(node, color) {
-    cy.getElementById(node).style('background-color', color);
-}
-
-function restoreColor(nodeColor) {
-    cy.nodes().style('background-color', nodeColor);
-}
 
 function appendState(graphState, node, component, stack, observation) {
     let state = {
@@ -91,18 +57,6 @@ function dfs2(node, visited, component, reverseGraph, stack) {
     }
 }
 
-function colorComponents(components) {
-    // console.log(components);
-    if(components === []) return;
-    let colors = ["green", "violet", "orange", "blue", "yellow", "brown", "black", "grey"]
-    for (let i = 0; i < components.length; i++) {
-        let color = colors[i];
-        for (let j = 0; j < components[i].length; j++) {
-            changeColor(components[i][j], color);
-        }
-    }
-}
-
 export function fillStates() {
     let visited = new Array(numNodes).fill(false);
     let stack = [];
@@ -127,7 +81,6 @@ export function fillStates() {
     appendState(2, -1, [], stack.slice(), "Reverse graph is created, now we will call DFS2 on nodes in stack");
     while (stack.length > 0) {
         let node = stack.pop();
-        console.log(node);
         if (!visited[node]) {
             let component = [];
             appendState(2, node, componentsList.slice(), stack.slice(), "DFS2 on node " + node.toString() + " is started, the node is popped from stack");
@@ -143,7 +96,6 @@ export function fillStates() {
             appendState(2, node, componentsList.slice(), stack.slice(), "Node " + node.toString() + " is already visited, the node is popped from stack");
         }
     }
-    console.log(states);
 }
 
 
@@ -170,18 +122,15 @@ function run(key) {
     }
     if (currentStackSize !== state.stack.length) {
         if (currentStackSize < state.stack.length) {
-            appendStack(state.stack[currentStackSize]);
+            appendStack(state.stack[currentStackSize], currentStackSize);
+            currentStackSize++;
         }
         else {
             removeStack();
+            currentStackSize--;
         }
     }
     colorComponents(state.component);
-}
-
-function disableInput(){
-    document.getElementById("dfs1").disabled = true;
-    document.getElementById("dfs2").disabled = true;
 }
 
 export function newGraph() {

@@ -1,91 +1,30 @@
 'use strict';
 import { graph, makeGraph,makeGraphInput, states, numNodes } from "./randomGraph.js";
-import { addNodes, addEdges, cy, removeEdges, addReverseEdges } from "./displayGraph.js";
-
-let quesFiles = ["./../practiceq1.json", "./../practiceq2.json", "./../practiceq3.json"];
-// randomly select a question file
-let filePath = quesFiles[Math.floor(Math.random() * quesFiles.length)];
-// let filePath = "./../practiceq1.json";
-let data = {};
-// fetch the json file
-// store all the contents of the json file in a variable
-
-console.log(filePath);
- await import(filePath,{ assert: { type: "json" } })
-    .then((info) => {
-        data = info.default;
-    })
-
+import { addNodes, addEdges, cy, removeEdges, addReverseEdges, removeNodes } from "./displayGraph.js";
+import {appendStack,removeStack, changeColor, restoreColor, colorComponents, disableInput} from "./common.js";
 
 window.nextSimulation = nextSimulation;
 window.previousSimulation = previousSimulation;
 window.newGraph = newGraph;
 window.refreshWorkingArea = refreshWorkingArea;
 
+let data = {};
 const observ = document.getElementById("observations");
 const myDiv = document.getElementById("questions");
 const quesText = document.getElementById("quesText");
 const EMPTY = "";
 
-export let componentsList = [];
+let componentsList = [];
 let numStates = 0;
 let pointer = 0;
 let decide = true;
 let currentStackSize = 0;
 let currentGraphState = 1;
 
-function appendStack(node) {
-    let svgns = "http://www.w3.org/2000/svg";
-    let rect = document.createElementNS(svgns, 'rect');
-    rect.setAttribute('x', currentStackSize * 60 + 10);
-    rect.setAttribute('y', 110);
-    rect.setAttribute('height', '80');
-    rect.setAttribute('width', '50');
-    rect.setAttribute('fill', 'blue');
-    let text = document.createElementNS(svgns, 'text');
-    text.setAttribute('x', currentStackSize * 60 + 30);
-    text.setAttribute('y', 150);
-    text.setAttribute('fill', 'white');
-    text.setAttribute('text-anchor', 'middle');
-    text.setAttribute('dominant-baseline', 'middle');
-    text.textContent = node;
-    document.getElementById('stack').appendChild(rect);
-    document.getElementById('stack').appendChild(text);
-    currentStackSize++;
-}
-
-function removeStack() {
-    let stack = document.getElementById('stack');
-    stack.removeChild(stack.lastChild);
-    stack.removeChild(stack.lastChild);
-    currentStackSize--;
-}
-
-function changeColor(node, color) {
-    cy.getElementById(node).style('background-color', color);
-}
-
-function restoreColor(nodeColor) {
-    cy.nodes().style('background-color', nodeColor);
-}
-
-function colorComponents(components) {
-    // console.log(components);
-    if(components === []) return;
-    let colors = ["green", "violet", "orange", "blue", "yellow", "brown", "black", "grey"]
-    for (let i = 0; i < components.length; i++) {
-        let color = colors[i];
-        for (let j = 0; j < components[i].length; j++) {
-            changeColor(components[i][j], color);
-        }
-    }
-}
-
 export function fillStates() {
     for(let i = 0; i < data.numStates; i++) {
         states[i] = data[i];
     }
-    console.log(states);
     numStates = data.numStates;
 }
 
@@ -205,26 +144,35 @@ function run(key) {
     }
     if (currentStackSize !== state.stack.length) {
         if (currentStackSize < state.stack.length) {
-            appendStack(state.stack[currentStackSize]);
+            appendStack(state.stack[currentStackSize],currentStackSize);
+            currentStackSize++;
         }
         else {
             removeStack();
+            currentStackSize--;
         }
     }
     colorComponents(state.component);
 }
 
-function disableInput(){
-    document.getElementById("dfs1").disabled = true;
-    document.getElementById("dfs2").disabled = true;
+async function importData() {
+    let quesFiles = ["./practiceq1.json", "./practiceq2.json", "./practiceq3.json"];
+    let filePath = quesFiles[Math.floor(Math.random() * quesFiles.length)];
+    // fetch the data from the file
+    const response =  await fetch(filePath)
+    data = await response.json();
 }
 
-export function newGraph() {
-    for (let iter = 1; iter <= numNodes; iter++) {
-        document.getElementById("iteration" + iter.toString()).classList.remove("is-active")
-    }
+async function newGraph() {
+    document.getElementById("dfs2").classList.remove("is-active");
     pointer = 0;
     decide = true;
+    numStates = 0;
+    currentStackSize = 0;
+    currentGraphState = 1;
+    componentsList = [];
+    data = {};
+    removeNodes();
     removeEdges();
     observ.innerHTML = EMPTY;
     restoreColor("pink");
@@ -274,13 +222,13 @@ export function previousSimulation() {
     }
 }
 
-export function refreshWorkingArea() {
+async function refreshWorkingArea() {
+    await importData();
+    makeGraphInput(data.structure.edges);
     disableInput();
     document.getElementById("dfs1").classList.add("is-active");
     addNodes();
     addEdges();
     fillStates();
 }
-// console.log(data[0])
-makeGraphInput(data.structure.edges);
 refreshWorkingArea();
