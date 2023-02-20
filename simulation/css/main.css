@@ -1,0 +1,226 @@
+.toolbar-item-list {
+  padding: 2% 5%;
+  text-align: center;
+  height: 100%;
+  overflow-y: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: start;
+  justify-content: center;
+  padding: 10px;
+}
+
+.button-margin{
+  margin-left: 1.25%;
+  margin-right: 1.25%;
+  font-size: 17px;
+}
+
+.ques-button{
+  margin-left: 1.25%;
+  margin-right: 1.25%;
+  margin-top: 1.5%;
+  font-size: 17px;
+}
+
+.tabs-size{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+input{
+  font-size: 15px;
+  width: 125px;
+  font-weight: 600;
+}
+table {
+  border-collapse: collapse;
+  border: 0.05rem solid black;
+  box-shadow: #97d23d 0px 0px 5px;
+}
+
+th,td {
+  text-align: center;
+  padding: 7px;
+}
+thead {
+  background-color: #186ac2;
+}
+thead th {
+  color: white;
+}
+tbody tr:nth-child(odd) {
+  background-color: #cff1ff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #66d3fa;
+}
+
+.highlight{
+  border: brown 4px solid;
+}
+.incorrect-value{
+  border: red 4px solid;
+  background-color: rgb(253, 193, 193);
+}
+
+.correct-update{
+  border: red 3px solid;
+  background-color: rgb(253, 193, 193);
+}
+
+.incorrect-update{
+  border: yellow 3px solid;
+  background-color: rgb(252, 253, 193);
+}
+
+@media screen and (max-width: 700px) {
+  .tabs-size{
+    font-size: 9px;
+  }
+  .button-margin{
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 10px;
+  }
+  th, td {
+    font-size: 10px;
+  }
+  input {
+    width: 40px;
+    font-size: 8px;
+    font-weight: 500;
+  }
+  .practice-array-container{
+    margin-top: 3%;
+  }
+  .highlight{
+    border: brown 2px solid;
+  }
+  .incorrect-value{
+    border: red 2px solid;
+    background-color: rgb(253, 193, 193);
+  }
+}
+
+.failure-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+.v-instruction-container {
+  margin-top: 30px;
+  border: .2rem solid #97d23d;
+  justify-content: flex-start;
+}
+
+.practice-main-container {
+  height: 100vh;
+  width: 100%;
+  border: 0.2rem solid #97d23d;
+  border-radius: 1rem;
+  background-color: #f1f1f1;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-self: auto;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.practice-top-container {
+  width: 100%;
+  height: 4%;
+}
+
+.practice-array-container {
+  width: 100%;
+  height: 35.5%;
+}
+
+.practice-main-content-container {
+  width: 100%;
+  height: 55.5%;
+}
+
+.practice-bottom-container {
+  width: 100%;
+  height: 5%;
+}
+
+.exercise-main-container {
+  height: 90vh;
+  width: 100%;
+  border: 0.2rem solid #97d23d;
+  border-radius: 1rem;
+  background-color: #f1f1f1;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-self: auto;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.exercise-top-container {
+  width: 100%;
+  height: 10%;
+}
+
+.exercise-main-content-container {
+  width: 100%;
+  height: 70%;
+}
+
+.exercise-bottom-container {
+  width: 100%;
+  height: 7.5%;
+}
+
+.text-demo {
+  font-size: 1.5rem;
+  fill: black;
+  font-weight: bold;
+}
+
+.array-demo {
+  stroke-width: 3px;
+  fill: #29e;
+  stroke: black;
+}
+
+.array-text {
+  font-size: 1.5rem;
+  fill: black;
+  font-weight: bold;
+}
+
+
+.centered-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tabs-info{
+  cursor: not-allowed;
+}
+
+.instruction-list{
+  text-align: left; 
+  padding-left: 10%; 
+  padding-right: 10%;
+}
