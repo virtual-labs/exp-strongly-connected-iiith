@@ -1,0 +1,32 @@
+{
+    "unit-type": "lu",
+    "label": "",
+    "basedir": ".",
+    "units": [
+        {
+            "unit-type": "aim"
+        },
+        {
+            "target": "demo.html",
+            "source": "simulation/demo.html",
+            "label": "Demo",
+            "unit-type": "task",
+            "content-type": "simulation"
+        },
+        {
+            "target": "practice.html",
+            "source": "simulation/practice.html",
+            "label": "Practice",
+            "unit-type": "task",
+            "content-type": "simulation"
+        }
+        ,
+        {
+            "target": "exercise.html",
+            "source": "simulation/exercise.html",
+            "label": "Exercise",
+            "unit-type": "task",
+            "content-type": "simulation"
+        }
+    ]
+}
