@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@virtual-labs/buildexp": "^1.0.5"
+  }
+}
