@@ -75,3 +75,4 @@ export function removeEdges(){
 
 // change the poistion of node 3
 cy.zoomingEnabled(false);
+cy.panningEnabled(false);
