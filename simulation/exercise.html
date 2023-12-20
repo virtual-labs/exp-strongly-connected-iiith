@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual labs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div class="columns is-centered">
+        <div class="column">
+            <div class="v-instruction-container">
+                <div class="v-collapsible is-size-5" id="task-description">
+                    Instructions
+                </div>
+                <div class="v-content instruction-list">
+                    <ul style="list-style: disc;">
+                        <li>In the exercise section you are supposed to find the strongly connected components.</li>
+                        <li>By clicking on a node, you can change the color.</li>
+                        <li>The node can be colored with the following colors green, violet, orange, blue, yellow, brown, black, grey</li>
+                        <li>Clicking on a node once will turn it green; clicking on it again will change its color to violet, and so on. If you click on a node with a grey color, it will turn green.</li>
+                        <li>The task is to give each component a unique color.</li>
+                        <li>Click on the <b>Submit</b> button to check your answers</li>
+                        <li>Click on the <b>New Graph</b> button to generate a new graph.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columns is-centered is-flex-direction-row is-flex-wrap-wrap is-align-content-start">
+        <div class="column is-7-desktop is-12-tablet is-12-mobile center-content">
+            <div class='exercise-main-container'>
+                <div class="exercise-top-container">
+                </div>
+                <div class='exercise-main-content-container' id="diagram">
+                </div>
+                <div class="exercise-top-container">
+                </div>
+                <div class="exercise-bottom-container">
+					<div class="columns centered-div">
+                        <button class="v-button button-margin" id="play-or-pause" onclick="submitSimulation()">Submit</button>
+                        <button class="v-button button-margin" id="restart" onclick="newGraph()">New Graph</button>
+					</div>
+				</div>
+            </div>
+        </div>
+        <div class="column is-3-desktop is-12-tablet is-12-mobile center-content">
+            <div class="v-datalist-container toolbar-item-list">
+                <div class="v-datalist-title">
+                    Observation
+                </div>
+                <div class="v-datalist-row">
+                    <div id="observations" style="font-size: 20px; font-weight:bold;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/exercise.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.22.1/cytoscape.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>
+<script src="../assets/js/iframeResize.js"></script></body>
+
+</html>

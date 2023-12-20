@@ -1,0 +1,228 @@
+{
+    "structure":{
+        "nodes":[0,1,2,3,4],
+        "edges":[[1],[2],[0,3],[4],[]]
+    },
+    "numStates":29,
+    "0":{
+        "graphState":1,
+        "node":0,
+        "observation": "DFS on node 0 is started",
+        "component": [],
+        "stack": []
+    },
+    "1":{
+        "graphState":1,
+        "node":1,
+        "observation": "DFS on node 1 is started",
+        "component": [],
+        "stack": []
+    },
+    "2":{
+        "graphState":1,
+        "node":2,
+        "observation": "DFS on node 2 is started",
+        "component": [],
+        "stack": []
+    },
+    "3":{
+        "graphState":1,
+        "node":0,
+        "observation": "Node 0 is already visited",
+        "component": [],
+        "stack": []
+    },
+    "4":{
+        "graphState":1,
+        "node":3,
+        "observation": "DFS on node 3 is started",
+        "component": [],
+        "stack": []
+    },
+    "5":{
+        "graphState":1,
+        "node":4,
+        "observation": "DFS on node 4 is started",
+        "component": [],
+        "stack": []
+    },
+    "6":{
+        "graphState":1,
+        "node":4,
+        "observation": "DFS on node 4 is complete and node 4 is pushed to stack",
+        "component": [],
+        "stack": [4],
+        "isQues": "True",
+        "ques": "what will happen at this point?",
+        "optiona": "DFS on node 4 is complete and node 4 is pushed to stack",
+        "optionb": "Reverse graph will be created",
+        "optionc": "Node 4 is already visited",
+        "ans": "a"
+    },
+    "7":{
+        "graphState":1,
+        "node":3,
+        "observation":"DFS on node 3 is complete and node 3 is pushed to stack",
+        "component": [],
+        "stack": [4,3]
+    },
+    "8":{
+        "graphState":1,
+        "node":2,
+        "observation": "DFS on node 2 is complete and node 2 is pushed to stack",
+        "component": [],
+        "stack": [4,3,2]
+    },
+    "9":{
+        "graphState":1,
+        "node":1,
+        "observation": "DFS on node 1 is complete and node 1 is pushed to stack",
+        "component": [],
+        "stack": [4,3,2,1]
+    },
+    "10":{
+        "graphState":1,
+        "node":0,
+        "observation": "DFS on node 0 is complete and node 0 is pushed to stack",
+        "component": [],
+        "stack": [4,3,2,1,0]
+    },
+    "11":{
+        "graphState":1,
+        "node":1,
+        "observation": "Node 1 is already visited",
+        "component": [],
+        "stack": [4,3,2,1,0]
+    },
+    "12":{
+        "graphState":1,
+        "node":2,
+        "observation": "Node 2 is already visited",
+        "component": [],
+        "stack": [4,3,2,1,0]
+    },
+    "13":{
+        "graphState":1,
+        "node":3,
+        "observation": "Node 3 is already visited",
+        "component": [],
+        "stack": [4,3,2,1,0]
+    },
+    "14":{
+        "graphState":1,
+        "node":4,
+        "observation": "Node 4 is already visited",
+        "component": [],
+        "stack": [4,3,2,1,0]
+    },
+    "15":{
+        "graphState":2,
+        "node":-1,
+        "observation": "Reverse graph is created, now we will call DFS2 on nodes in stack",
+        "component": [],
+        "stack": [4,3,2,1,0]
+    },
+    "16":{
+        "graphState":2,
+        "node":0,
+        "observation": "DFS2 on node 0 is started, the node is popped from stack",
+        "component": [],
+        "stack": [4,3,2,1],
+        "isQues": "True",
+        "ques": "Which node will be popped from stack next?",
+        "optiona": "2",
+        "optionb": "0",
+        "optionc": "4",
+        "ans": "b"
+    },
+    "17":{
+        "graphState":2,
+        "node":2,
+        "observation": "DFS2 on node 2 is started",
+        "component": [],
+        "stack": [4,3,2,1]
+    },
+    "18":{
+        "graphState":2,
+        "node":1,
+        "observation": "DFS on node 1 is started",
+        "component": [],
+        "stack": [4,3,2,1]
+    },
+    "19":{
+        "graphState":2,
+        "node":0,
+        "observation": "Node 0 is already visited",
+        "component": [],
+        "stack": [4,3,2,1]
+    },
+    "20":{
+        "graphState":2,
+        "node":0,
+        "observation": "DFS2 on node 0 is complete and component is pushed to componentsList. The nodes in the component are colored with same color. The component is/are 0 2 1 .",
+        "component": [[0,2,1]],
+        "stack": [4,3,2,1],
+        "isQues": "True",
+        "ques": "Which component is/are pushed to componentsList?",
+        "optiona": "0 2 1",
+        "optionb": "0 1",
+        "optionc": "0 2",
+        "ans": "a"
+    },
+    "21":{
+        "graphState":2,
+        "node":1,
+        "observation": "Node 1 is already visited, the node is popped from stack",
+        "component": [[0,2,1]],
+        "stack": [4,3,2]
+    },
+    "22":{
+        "graphState":2,
+        "node":2,
+        "observation": "Node 2 is already visited, the node is popped from stack",
+        "component": [[0,2,1]],
+        "stack": [4,3]
+    },
+    "23":{
+        "graphState":2,
+        "node":3,
+        "observation": "DFS2 on node 3 is started, the node is popped from stack",
+        "component": [[0,2,1]],
+        "stack": [4]
+    },
+    "24":{
+        "graphState":2,
+        "node":2,
+        "observation": "Node 2 is already visited",
+        "component": [[0,2,1]],
+        "stack": [4]
+    },
+    "25":{
+        "graphState":2,
+        "node":3,
+        "observation": "DFS2 on node 3 is complete and component is pushed to componentsList. The nodes in the component are colored with same color. The component is/are 3 .",
+        "component": [[0,2,1],[3]],
+        "stack": [4]
+    },
+    "26":{
+        "graphState":2,
+        "node":4,
+        "observation": "DFS2 on node 4 is started, the node is popped from stack",
+        "component": [[0,2,1],[3]],
+        "stack": []
+    },
+    "27":{
+        "graphState":2,
+        "node":3,
+        "observation": "Node 3 is already visited",
+        "component": [[0,2,1],[3]],
+        "stack": []
+    },
+    "28":{
+        "graphState":2,
+        "node":4,
+        "observation": "DFS2 on node 4 is complete and component is pushed to componentsList. The nodes in the component are colored with same color. The component is/are 4 .",
+        "component": [[0,2,1],[3],[4]],
+        "stack": []
+    }
+}

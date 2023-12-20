@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual labs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div class="columns is-centered">
+        <div class="column">
+            <div class="v-instruction-container">
+                <div class="v-collapsible is-size-5" id="task-description">
+                    Instructions
+                </div>
+                <div class="v-content instruction-list">
+                    <ul style="list-style: disc;">
+                        <li>The practice part is quite similar to the demo. As you progress, you will encounter questions that require answers to proceed</li>
+                        <li>The current node in the DFS algorithm is highlighted by <b>Red Color</b>.</li>
+                        <li>The algorithm uses a <b>Stack</b> to store the nodes.</li>
+                        <li>The algorithm uses DFS algorithm twice; for the second time the edges are reversed.</li>
+                        <li>Each component is represented with a unique color.</li>
+                        <li>Click on the <b>Next</b> button to move to the next iteration.</li>
+                        <li>Click on the <b>Previous</b> button to move to the previous iteration.</li>
+                        <li>Click on the <b>New Graph</b> button to generate a new graph.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columns is-centered is-flex-direction-row is-flex-wrap-wrap is-align-content-start">
+        <div class="column is-7-desktop is-12-tablet is-12-mobile center-content">
+            <div class='practice-main-container'>
+                <div class="practice-top-container">
+                    <div class="column centered-div">
+                        <div class="v-tabs tabs-size">
+                            <ul>
+                                <li id="dfs1">
+                                    <a class="tabs-info">
+                                        DFS 1
+                                    </a>
+                                </li>
+                                <li id="dfs2">
+                                    <a class="tabs-info">
+                                        DFS 2
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left Sidebar Area -->
+                <div class='practice-array-container'>
+                    <svg class="svg" id="stack" xmlns="http://www.w3.org/2000/svg" width="120%" height="120%"
+                        viewBox="0 0 550 325 ">
+                        <!--  horizontal line -->
+                        <line x1="0" y1="100" x2="420" y2="100" stroke="black" stroke-width="4" />
+                        <!--  vertical line -->
+                        <line x1="0" y1="100" x2="0" y2="200" stroke="black" stroke-width="4" />
+                        <!--  horizontal line -->
+                        <line x1="0" y1="200" x2="420" y2="200" stroke="black" stroke-width="4" />
+                    </svg>  
+                </div>
+
+                <!-- Main Content Area -->
+                <div class='practice-main-content-container' id="diagram">
+                </div>
+                <div class="practice-bottom-container">
+					<div class="columns centered-div">
+                        <button class="v-button button-margin" id="prev" onclick="previousSimulation()">Prev</button>
+                        <button class="v-button button-margin" id="next" onclick="nextSimulation()">Next</button>
+                        <button class="v-button button-margin" id="restart" onclick="newGraph()">New Graph</button>
+					</div>
+				</div>
+            </div>
+        </div>
+        <div class="column is-3-desktop is-12-tablet is-12-mobile center-content">
+            <div class="v-datalist-container toolbar-item-list">
+                <div class="v-datalist-title">
+                    Observation
+                </div>
+                <div class="v-datalist-row">
+                    <div id="observations" style="font-size: 20px; font-weight:bold;"></div>
+                    <div id="quesText" style="font-size: 20px; font-weight:bold;"></div>
+                    <div id="questions" style="font-size: 20px; font-weight:bold;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/practice.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.22.1/cytoscape.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>
+<script src="../assets/js/iframeResize.js"></script></body>
+
+</html>

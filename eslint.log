@@ -1,0 +1,11 @@
+
+/home/runner/work/exp-strongly-connected-iiith/exp-strongly-connected-iiith/experiment/simulation/js/displayGraph.js
+  3:17  warning  'cytoscape' is not defined  no-undef
+
+/home/runner/work/exp-strongly-connected-iiith/exp-strongly-connected-iiith/experiment/simulation/js/practice.js
+  2:10  warning  'graph' is defined but never used      no-unused-vars
+  2:17  warning  'makeGraph' is defined but never used  no-unused-vars
+  2:51  warning  'numNodes' is defined but never used   no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
