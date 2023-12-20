@@ -2,37 +2,59 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Q1. The task on our hand is to determine whether a graph contains cycle or not. Select the method you can use",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "BFS",
+        "b": "DFS",
+        "c": "Both BFS and DFS",
+        "d": "None of the above"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "BFS can be used to find the cycle in a directed graph but in case of undirected graph we need to do topological sorting first.",
+        "b": "DFS keeps the record of visited node and also a stack."
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Q2. Allan was using DFS on a tree, he used the same code on a graph but the results were not correct. What could be the reason?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "DFS can only be used on trees",
+        "b": "DFS can be used on graphs but we need to keep track of visited nodes",
+        "c": "Need to use a stack in DFS"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "b": "Graph can contain cycles, so we need to keep track of visited nodes.",
+        "c": "DFS in tree uses stack implicitly (recursion call), but in graph we need to use it explicitly. Thus absence of stack is not the reason for incorrect results."
       },
-      "correctAnswer": "c",
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Q3. What will be the order of traversal of nodes in DFS for the following graph starting from node 2? (Assume that the nodes are traversed in numerical order.) <br> <img src='./images/graph_q1.png'>",
+      "answers": {
+        "a": "23041567",
+        "b": "20341567",
+        "c": "20415367"
+      },
+      "explanations": {
+        "c": "The dfs will start from node go to 0 and from 0 to 4 and so on."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q4. What will be the order of traversal of nodes in BFS for the following graph starting from node 5? (Assume that the nodes are traversed in numerical order.) <br> <img src='./images/graph_q1.png'>",
+      "answers": {
+        "a": "50236741",
+        "b": "50134267",
+        "c": "50134672"
+      },
+      "explanations": {
+        "a": "This is the order of traversal if DFS is used. BFS will give 50134267.",
+        "b": "THe bfs uses queue so from 5 it will add 0,1,3 and 4 into the queue and then it will pop 0 and add 2 into the queue and so on."
+      },
+      "correctAnswer": "b",
       "difficulty": "beginner"
     }
   ]

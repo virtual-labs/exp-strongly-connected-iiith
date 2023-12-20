@@ -1,2 +1,1 @@
-## Experiment name
-Strongly Connected Components
+## Strongly Connected Components

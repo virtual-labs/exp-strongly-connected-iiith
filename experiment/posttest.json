@@ -2,38 +2,57 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Q1. What is the time complexity of kosaraju's algorithm? Assume the graph has n vertices and m edges.",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "O(n+m)",
+        "b": "O(n^2)",
+        "c": "O(n^3)",
+        "d": "O(nm)"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "The algorithm is a DFS based algorithm. The first DFS takes O(n+m) time, the second DFS takes O(n+m) time and the reversing the graph also takes O(n+m) time. So total time is O(n+m)."
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Q2. What is the space complexity of kosaraju's algorithm? Assume the graph has n vertices and m edges. Do not consider the space required to store the graph.",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "O(n+m)",
+        "b": "O(m)",
+        "c": "O(n)"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "c": "The algorithm needs a stack to store the vertices in the order of their finish times. The stack can have at most n vertices. So the space complexity is O(n)."
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+    {
+      "question": "Q3. The Kosaraju's algorithm is used only for directed graphs. True or False?",
+      "answers": {
+        "a": "True",
+        "b": "False"
+      },
+      "explanations": {
+        "b": "The algorithm can be used for both directed and undirected graphs. A normal DFS can be only used to find the strongly connected components in an undirected graph."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Q4. A graph with n nodes is a DAG (Directed Acyclic Graph), what are the number of strongly connected components in the graph?",
+      "answers": {
+        "a": "n-1",
+        "b": "1",
+        "c": "n",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "c": "Since there are no cycles in the graph, each node is a strongly connected component. So the number of strongly connected components is n."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
     }
   ]
 }
